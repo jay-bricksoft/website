@@ -27,13 +27,16 @@
         <a class="nav-link mr-0" href="https://www.instagram.com/savetheinternetpetition/"><i class="fa fa-instagram"></i></a>
     </div>
     <!-- Insert mobile menu -->
-    <nav class="hidden sm:block flex-1 container">
+    <nav id="#nav" class="hidden sm:block flex-1 container">
         <ul class="flex navbar flex-no-wrap list-reset m-0 p-0">
             <li><a class="nav-link" href="/about-us">About Us</a></li>
             <li><a class="nav-link" href="/gallery"><%= __('gallery_title') %></a></li>
             <li><a class="nav-link" href="/about"><%= __('about_title') %></a></li>
         </ul>
     </nav>
+
+    <a id="#mobile-menu-trigger" class="mr-1 items-center cursor-pointer nav-link mobile-menu-trigger"><i class="fa fa-bars"></i></a>
+
     <div class="language-picker mr-2">
         <a class="cursor-pointer nav-link pr-4 mr-0 lang-trigger"><span class="flag-icon flag-icon-<%= currentLanguage == 'en' ? 'gb' : currentLanguage %>"></span></a>
         <menu class="hidden absolute w-full bg-blue shadow-md m-0 p-0 pr-2">

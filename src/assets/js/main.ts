@@ -5,16 +5,39 @@ let langpicker = document.getElementsByClassName("language-picker")[0];
 let langMenuTrigger = langpicker.getElementsByClassName('lang-trigger')[0];
 let langMenu = langpicker.getElementsByTagName('menu')[0];
 
-// insert new variable for toggling menu
+// insert new variable for toggling mobile menu
+let mobileMenuTrigger = document.getElementById("#mobile-menu-trigger");
+let nav = document.getElementById("#nav");
 
+let langMenuIsOpen = false;
+let mobileMenuIsOpen = false;
 
-langMenuTrigger.addEventListener('click', function() {
-    langpicker.classList.toggle('open'),
+function toggleLangMenu () {
+    langpicker.classList.toggle('open');
     langMenu.classList.toggle('hidden');
+    langMenuIsOpen = langMenuIsOpen ? false : true;
+}
+
+function toggleMobileMenu () {
+    nav.classList.toggle('hidden');
+    mobileMenuIsOpen = mobileMenuIsOpen ? false : true;
+}
+
+langMenuTrigger.addEventListener('click', () => {
+    toggleLangMenu();
+    if (mobileMenuIsOpen) {
+        toggleMobileMenu();
+    }
 });
 
-// add event listener for toggle button
 
+// add event listener for toggling mobile menu
+mobileMenuTrigger.addEventListener('click', () => {
+    toggleMobileMenu();
+    if (langMenuIsOpen) {
+        toggleLangMenu();
+    }
+});
 
 // it contains "the" for SEO, remove it as it messes up typed.js
 document.getElementById('head-typer').innerHTML = "";
