@@ -5,10 +5,16 @@ let langpicker = document.getElementsByClassName("language-picker")[0];
 let langMenuTrigger = langpicker.getElementsByClassName('lang-trigger')[0];
 let langMenu = langpicker.getElementsByTagName('menu')[0];
 
+// insert new variable for toggling menu
+
+
 langMenuTrigger.addEventListener('click', function() {
     langpicker.classList.toggle('open'),
     langMenu.classList.toggle('hidden');
 });
+
+// add event listener for toggle button
+
 
 // it contains "the" for SEO, remove it as it messes up typed.js
 document.getElementById('head-typer').innerHTML = "";
